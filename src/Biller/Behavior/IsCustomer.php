@@ -68,7 +68,9 @@ trait IsCustomer
                 $args['metadata'][$property] = $this->$property;
             }
         }*/
+		
         $args['metadata'] = $metadata;
+		
         $stripe_customer = \Stripe\Customer::create($args);
 
         // save new customer

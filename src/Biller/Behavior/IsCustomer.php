@@ -63,12 +63,12 @@ trait IsCustomer
         }
 
         // customer metadata
-        foreach ($metadata as $property) {
+        /*foreach ($metadata as $property) {
             if (isset($this->$property)) {
                 $args['metadata'][$property] = $this->$property;
             }
-        }
-
+        }*/
+        $args['metadata'] = $metadata;
         $stripe_customer = \Stripe\Customer::create($args);
 
         // save new customer
